@@ -40,23 +40,25 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="{{asset('assets/img/ui-sam.jpg')}}" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href="profile.html"><img src="{{asset('assets/img/FOTO_kosong.png')}}" class="img-circle" width="150"></a></p>
+          <h5 class="centered">NAMA ANGGOTA</h5>
+          <h5 class="centered">JABATAN</h5>
+          <h5 class="centered"><a href="" class="btn btn-primary" ><i class="fa fa-user"></i><span> PROFILE</span></a> <a class="btn  btn-danger " href=""><i class="fa fa-sign-out"></i><span> LOGOUT</span></a></h5>
           <li class="mt">
-            <a class="{{Request::is('ormawa/home')?'active':''}}" href="/ormawa/home">
-              <i class="fa fa-dashboard"></i>
+            <a class="{{Request::is('404')?'active':''}}" href="/404">
+              <i class="fa fa-home"></i>
               <span>Home</span>
               </a>
           </li>
           <li class="sub-menu ">
-            <a href="javascript:;">
+            <a href="javascript:;" >
               <i class="fa fa-tasks"></i>
               <span>Forms</span>
               </a>
             <ul class="sub">
-              <li class="nav-item {{Request::is('testing')?'active':''}}"><a class="nav-link" href="/testing">Form Components</a></li>
-              <li class="nav-item {{Request::is('welcome')?'active':''}}"><a class="nav-link" href="/welcome">Advanced Components</a></li>
               <li class="nav-item {{Request::is('ormawa/formPengajuanProker')?'active':''}}"><a class="nav-link" href="/ormawa/formPengajuanProker">Form Pengajuan Proker</a></li>
+              <li class="nav-item {{Request::is('manajemen/formRevisi')?'active':''}}"><a class="nav-link" href="/manajemen/formRevisi">Form Revisi Proposal</a> </li>
+              <li class="nav-item {{Request::is('ormawa/formPengurus')?'active':''}}"><a href="/ormawa/formPengurus">Form Edit Pengurus</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -70,12 +72,7 @@
               <li><a href="advanced_table.html">Advanced Table</a></li>
             </ul>
           </li>
-          <li class="mt">
-            <a href="" class="logout">
-              <i class="fa fa-dashboard"></i>
-              <span>LOGOUT</span>
-            </a>
-          </li>
+          
         </ul>
         <!-- sidebar menu end-->
       </div>
@@ -104,7 +101,7 @@
   <script type="text/javascript" src="{{asset('assets/lib/bootstrap-daterangepicker/moment.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js')}}"></script>
   <script src="{{asset('assets/lib/advanced-form-components.js')}}"></script>
-  
+
 
   </body>
 </html>

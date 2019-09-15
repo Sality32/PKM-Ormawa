@@ -19,6 +19,10 @@ Route::get('/testing',function(){
 	return view('testing');
 });
 
+Route::get('/404',function(){
+	return view('404');
+});
+
 Route::prefix('ormawa')->group(function(){
 	Route::get('/home',function(){
 		return view('home');
@@ -27,22 +31,22 @@ Route::prefix('ormawa')->group(function(){
 		return view('ormawa/formPengajuanProker');
 	});
 	Route::get('/formLPJ',function(){
-		return view('formLPJ');
+		return view('ormawa/formLPJ');
 	});
 	Route::get('/formPengurus',function(){
-		return view('formPengurus');
+		return view('ormawa/formEditPengurus');
 	});
 	Route::get('/listPengurus',function(){
-		return view('listPengurus');
-	})
+		return view('ormawa/listPengurus');
+	});
 });
 
-Route::prefix('pd3')->group(function(){
+Route::prefix('manajemen')->group(function(){
 	Route::get('/formRevisi',function(){
-		return view('manajemen/formRevisi');
+		return view('manajemen/formRevisiPengajuan');
 	});
 	Route::get('/listLPJ',function(){
-		return view('listLPJ');
+		return view('manajemen/listLPJ');
 	});
 
 });

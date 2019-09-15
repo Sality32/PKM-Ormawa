@@ -3,7 +3,7 @@
 @section('content')
 	<section id="main-content">
 		<section class="wrapper">
-			<p><H1>HAHAHAH</p>
+			<p><h1 class="centered">404 NOT FOUND</h1></p>
 		</section>
 	</section>
 
