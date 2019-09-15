@@ -23,4 +23,31 @@ Route::prefix('ormawa')->group(function(){
 	Route::get('/home',function(){
 		return view('home');
 	});
+	Route::get('/formPengajuanProker',function(){
+		return view('formPengajuanProker');
+	});
+	Route::get('/formLPJ',function(){
+		return view('formLPJ');
+	});
+	Route::get('/formPengurus',function(){
+		return view('formPengurus');
+	});
+	Route::get('/listPengurus',function(){
+		return view('listPengurus');
+	})
+});
+
+Route::prefix('pd3')->group(function(){
+	Route::get('/formRevisi',function(){
+		return view('formRevisi');
+	});
+	Route::get('/listLPJ',function(){
+		return view('listLPJ');
+	});
+
+});
+
+
+Route::prefix('admin')->group(function(){
+	
 });

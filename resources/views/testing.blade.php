@@ -1,40 +1,54 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
-    <!--main content start-->
-    <section id="main-content">
+   <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Form Validation</h3>
-        <!-- BASIC FORM VALIDATION -->
+        <h3><i class="fa fa-angle-right"></i> Advanced Form Components</h3>
         <div class="row mt">
+          <!--  DATE PICKERS -->
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Basic Validations</h4>
             <div class="form-panel">
-              <form role="form" class="form-horizontal style-form">
-                <div class="form-group has-success">
-                  <label class="col-lg-2 control-label">First Name</label>
-                  <div class="col-lg-10">
-                    <input type="text" placeholder="" id="f-name" class="form-control">
-                    <p class="help-block">Successfully done</p>
-                  </div>
-                </div>
-                <div class="form-group has-error">
-                  <label class="col-lg-2 control-label">Last Name</label>
-                  <div class="col-lg-10">
-                    <input type="text" placeholder="" id="l-name" class="form-control">
-                    <p class="help-block">Aha you gave a wrong info</p>
-                  </div>
-                </div>
-                <div class="form-group has-warning">
-                  <label class="col-lg-2 control-label">Email</label>
-                  <div class="col-lg-10">
-                    <input type="email" placeholder="" id="email2" class="form-control">
-                    <p class="help-block">Something went wrong</p>
+              <form action="#" class="form-horizontal style-form">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Default Datepicker</label>
+                  <div class="col-md-3 col-xs-11">
+                    <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="text" value="">
+                    <span class="help-block">Select date</span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-lg-offset-2 col-lg-10">
-                    <button class="btn btn-theme" type="submit">Submit</button>
+                  <label class="control-label col-md-3">Start with years viewMode</label>
+                  <div class="col-md-3 col-xs-11">
+                    <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
+                      <input type="text" readonly="" value="01-01-2014" size="16" class="form-control">
+                      <span class="input-group-btn add-on">
+                        <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                    <span class="help-block">Select date</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Months Only</label>
+                  <div class="col-md-3 col-xs-11">
+                    <div data-date-minviewmode="months" data-date-viewmode="years" data-date-format="mm/yyyy" data-date="01/2014" class="input-append date dpMonths">
+                      <input type="text" readonly="" value="01/2014" size="16" class="form-control">
+                      <span class="input-group-btn add-on">
+                        <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                    <span class="help-block">Select month only</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Date Range</label>
+                  <div class="col-md-4">
+                    <div class="input-group input-large" data-date="01/01/2014" data-date-format="mm/dd/yyyy">
+                      <input type="text" class="form-control dpd1" name="from">
+                      <span class="input-group-addon">To</span>
+                      <input type="text" class="form-control dpd2" name="to">
+                    </div>
+                    <span class="help-block">Select date range</span>
                   </div>
                 </div>
               </form>
@@ -44,121 +58,151 @@
           <!-- /col-lg-12 -->
         </div>
         <!-- /row -->
-        <!-- FORM VALIDATION -->
+        <!-- DATE TIME PICKERS -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Form Validations</h4>
             <div class="form-panel">
-              <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Name (required)</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="cname" name="name" minlength="2" type="text" required />
+              <form class="form-horizontal  style-form" action="#">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Default input Datetimepicker</label>
+                  <div class="col-md-4">
+                    <input size="16" type="text" value="2014-01-01 10:00" readonly class="form_datetime form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3"> Component Datetimepicker</label>
+                  <div class="col-md-4">
+                    <div class="input-group date form_datetime-component">
+                      <input type="text" class="form-control" readonly="" size="16">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-theme date-set"><i class="fa fa-calendar"></i></button>
+                        </span>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-2">E-Mail (required)</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="cemail" type="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Advance Datetimepicker</label>
+                  <div class="col-md-4">
+                    <div data-date="2014-02-01T10:05:00Z" class="input-group date form_datetime-adv">
+                      <input type="text" class="form-control" readonly="" size="16">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-theme02 date-reset"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-theme date-set"><i class="fa fa-calendar"></i></button>
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="curl" class="control-label col-lg-2">URL (optional)</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="curl" type="url" name="url" />
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Meridian Format</label>
+                  <div class="col-md-4">
+                    <div data-date="2014-01-18T15:00:00Z" class="input-group date form_datetime-meridian">
+                      <input type="text" class="form-control" readonly="" size="16">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-theme02 date-reset"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-theme date-set"><i class="fa fa-calendar"></i></button>
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="ccomment" class="control-label col-lg-2">Your Comment (required)</label>
-                    <div class="col-lg-10">
-                      <textarea class="form-control " id="ccomment" name="comment" required></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Save</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
             <!-- /form-panel -->
           </div>
           <!-- /col-lg-12 -->
         </div>
-        <!-- /row -->
+        <!-- row -->
+        <!--  TIME PICKERS -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Advanced Form Validations</h4>
             <div class="form-panel">
-              <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
-                  <div class="form-group ">
-                    <label for="firstname" class="control-label col-lg-2">Firstname</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="firstname" name="firstname" type="text" />
+              <form class="form-horizontal  style-form" action="#">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Default Timepicker</label>
+                  <div class="col-md-4">
+                    <div class="input-group bootstrap-timepicker">
+                      <input type="text" class="form-control timepicker-default">
+                      <span class="input-group-btn">
+                        <button class="btn btn-theme04" type="button"><i class="fa fa-clock-o"></i></button>
+                        </span>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2">Lastname</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" name="lastname" type="text" />
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">24hr Timepicker</label>
+                  <div class="col-md-4">
+                    <div class="input-group bootstrap-timepicker">
+                      <input type="text" class="form-control timepicker-24">
+                      <span class="input-group-btn">
+                        <button class="btn btn-theme04" type="button"><i class="fa fa-clock-o"></i></button>
+                        </span>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">Username</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="password" name="password" type="password" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Confirm Password</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">Email</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="email" name="email" type="email" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="newsletter" class="control-label col-lg-2 col-sm-3">Receive the Newsletter</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="newsletter" name="newsletter" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Save</button>
-                      <button class="btn btn-theme04" type="button">Cancel</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
             <!-- /form-panel -->
           </div>
           <!-- /col-lg-12 -->
         </div>
-        <!-- /row -->
+        <!-- row -->
+        <!--ADVANCED FILE INPUT-->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <form action="#" class="form-horizontal style-form">
+                <div class="form-group">
+                  <label class="control-label col-md-3">Default</label>
+                  <div class="col-md-4">
+                    <input type="file" class="default" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Without input</label>
+                  <div class="controls col-md-9">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <span class="btn btn-theme02 btn-file">
+                        <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select file</span>
+                      <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                      <input type="file" class="default" />
+                      </span>
+                  
+                      <a href="advanced_form_components.html#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group last">
+                  <label class="control-label col-md-3">Image Upload</label>
+                  <div class="col-md-9">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+                      </div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-theme02 btn-file">
+                          <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
+                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                        <input type="file" class="default" />
+                        </span>
+                        <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
+                      </div>
+                    </div>
+                    <span class="label label-info">NOTE!</span>
+                    <span>
+                      Attached image thumbnail is
+                      supported in Latest Firefox, Chrome, Opera,
+                      Safari and Internet Explorer 10 only
+                      </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- row -->
       </section>
       <!-- /wrapper -->
     </section>
-    <!-- /MAIN CONTENT -->
-    @endsection
+     @endsection
