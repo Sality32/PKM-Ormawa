@@ -24,7 +24,7 @@ Route::prefix('ormawa')->group(function(){
 		return view('home');
 	});
 	Route::get('/formPengajuanProker',function(){
-		return view('formPengajuanProker');
+		return view('ormawa/formPengajuanProker');
 	});
 	Route::get('/formLPJ',function(){
 		return view('formLPJ');
@@ -39,7 +39,7 @@ Route::prefix('ormawa')->group(function(){
 
 Route::prefix('pd3')->group(function(){
 	Route::get('/formRevisi',function(){
-		return view('formRevisi');
+		return view('manajemen/formRevisi');
 	});
 	Route::get('/listLPJ',function(){
 		return view('listLPJ');
@@ -49,5 +49,5 @@ Route::prefix('pd3')->group(function(){
 
 
 Route::prefix('admin')->group(function(){
-	
+
 });
