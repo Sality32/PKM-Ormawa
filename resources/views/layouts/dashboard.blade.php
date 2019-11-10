@@ -20,11 +20,12 @@
     /lib/bootstrap-fileupload/bootstrap-fileupload.css')}}" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-datepicker/css/datepicker.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-daterangepicker/daterangepicker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-timepicker/timepicker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-datetimepicker/datetimepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-timepicker/compiled/timepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap-datetimepicker/css/datetimepicker.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style-responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/table-responsive.css')}}">
     
   </head>
   	<body>
@@ -44,35 +45,43 @@
           <h5 class="centered">NAMA ANGGOTA</h5>
           <h5 class="centered">JABATAN</h5>
           <h5 class="centered"><a href="" class="btn btn-primary" ><i class="fa fa-user"></i><span> PROFILE</span></a> <a class="btn  btn-danger " href=""><i class="fa fa-sign-out"></i><span> LOGOUT</span></a></h5>
-          <li class="mt">
-            <a class="{{Request::is('404')?'active':''}}" href="/404">
+          <li class="nav-item">
+            <a class="{{Request::is('ormawa/listProposal')?'active':''}}" href="/ormawa/listProposal">
               <i class="fa fa-home"></i>
               <span>Home</span>
               </a>
           </li>
-          <li class="sub-menu ">
-            <a href="javascript:;" >
+          <li class="nav-item">
+            <a class="{{Request::is('bem/listPengajuan')?'active':''}}" href="/bem/listPengajuan">
+              <i class="fa fa-home"></i>
+              <span>Home BEM PENGAJUAN</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="{{Request::is('bem/listKegiatan')?'active':''}}" href="/bem/listKegiatan">
+              <i class="fa fa-home"></i>
+              <span>Home BEM PELAKSANAAN ORMAWA</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="{{Request::is('menejemen/listPengajuan')?'active':''}}" href="/manajemen/listPengajuan">
+              <i class="fa fa-home"></i>
+              <span>Home Pengajuan Kegiatan</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="{{Request::is('menejemen/listPengajuan')?'active':''}}" href="/manajemen/listPengajuan">
+              <i class="fa fa-home"></i>
+              <span>Home Pelaksanaan Kegiatan</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="/ormawa/formPengajuanProker" class="{{Request::is('ormawa/formPengajuanProker')?'active':''}}">
               <i class="fa fa-tasks"></i>
-              <span>Forms</span>
-              </a>
-            <ul class="sub">
-              <li class="nav-item {{Request::is('ormawa/formPengajuanProker')?'active':''}}"><a class="nav-link" href="/ormawa/formPengajuanProker">Form Pengajuan Proker</a></li>
-              <li class="nav-item {{Request::is('manajemen/formRevisi')?'active':''}}"><a class="nav-link" href="/manajemen/formRevisi">Form Revisi Proposal</a> </li>
-              <li class="nav-item {{Request::is('ormawa/formPengurus')?'active':''}}"><a href="/ormawa/formPengurus">Form Edit Pengurus</a></li>
-            </ul>
+              <span>Form Pengajuan Proker</span>
+            </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="basic_table.html">Basic Table</a></li>
-              <li><a href="responsive_table.html">Responsive Table</a></li>
-              <li><a href="advanced_table.html">Advanced Table</a></li>
-            </ul>
-          </li>
-          
+
         </ul>
         <!-- sidebar menu end-->
       </div>
@@ -93,7 +102,7 @@
   <script src="{{asset('assets/lib/common-scripts.js')}}"></script>
   <!--script for this page-->
   <script src="{{asset('assets/lib/jquery-ui-1.9.2.custom.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assetslib/bootstrap-fileupload/bootstrap-fileupload.js')}}"></script>
+  <script type="text/javascript" src="{{asset('assets/lib/bootstrap-fileupload/bootstrap-fileupload.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/lib/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/lib/bootstrap-daterangepicker/date.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/lib/bootstrap-daterangepicker/daterangepicker.js')}}"></script>

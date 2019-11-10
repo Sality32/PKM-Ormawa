@@ -39,7 +39,23 @@ Route::prefix('ormawa')->group(function(){
 	Route::get('/listPengurus',function(){
 		return view('ormawa/listPengurus');
 	});
+	Route::get('/listProposal','ProposalController@index');
+	Route::post('/storeProposal','ProposalController@store');
+	Route::get('/listPengajuan','ormawaController@index');
+	Route::get('/formPerbaikan/{id_proposal}','ProposalController@revisi');
+	Route::post('/formPerbaikanAction','ProposalController@revisiAction');
+	Route::get('/detailPenolakan/{id_proposal}','ProposalController@detailPenolakan');
 });
+
+Route::prefix('bem')->group(function(){
+	Route::get('/listPengajuan','bem@index');
+	Route::get('/revisiBem/{id_proposal}','bem@revisi');
+	Route::post('/revisiBemAction','bem@revisiAction');
+	Route::get('/updateStatus/{id_proposal}/{status}','bem@updateStatus');
+	Route::get('/listKegiatan','bem@indexDiterima');
+});
+
+
 
 Route::prefix('manajemen')->group(function(){
 	Route::get('/formRevisi',function(){
@@ -48,6 +64,12 @@ Route::prefix('manajemen')->group(function(){
 	Route::get('/listLPJ',function(){
 		return view('manajemen/listLPJ');
 	});
+	Route::get('/listPengajuan','Manajemen@index');
+	Route::get('/revisiManajemen/{id_proposal}','Manajemen@revisi');
+	Route::post('/revisiManajemenAction','Manajemen@revisiAction');
+	Route::get('/updateStatus/{id_proposal}/{status}','Manajemen@updateStatus');
+	Route::get('/tolakProposal/{id_proposal}','Manajemen@tolak');
+	Route::post('/tolakProposalAction','Manajemen@tolakAction');
 
 });
 

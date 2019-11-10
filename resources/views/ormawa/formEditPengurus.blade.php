@@ -59,7 +59,6 @@
 			                      	</div>
 			                </div>
 	                   	</div>
-                      </div>
                       <div class="form-group">
                       	<label class="control-label col-md-2">Catatan Revisi</label>
                       	<div class="col-sm-10">
@@ -71,6 +70,7 @@
 	                      <div class="col-lg-offset-2 col-lg-2">
 	                      	<button type="submit" class="btn btn-theme">SUBMIT REVISI</button>
 	                      </div>
+                      </div>
                       </div>
 					</form>
 				</div>
